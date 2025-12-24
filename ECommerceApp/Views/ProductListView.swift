@@ -147,6 +147,8 @@ struct ProductRow: View {
             }
         }
         .padding(.vertical, 4)
+        .accessibilityElement(children: .combine)
+        .accessibilityIdentifier("testProduct.\(product.id)")
     }
 }
 

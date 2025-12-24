@@ -26,7 +26,16 @@ final class ECommerceAppUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+        
+        let predicate = NSPredicate(format: "identifier CONTAINS 'testProduct.'")
+            let productsQuery = app.descendants(matching: .any).matching(predicate)
 
+            let existsPredicate = NSPredicate(format: "count > 0")
+
+            expectation(for: existsPredicate, evaluatedWith: productsQuery)
+            waitForExpectations(timeout: 10)
+
+            XCTAssertTrue(productsQuery.count > 0, "Products should be visible")
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
