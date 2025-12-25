@@ -13,6 +13,12 @@ final class ProductListViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     private(set) var loadedOnce = false
+    
+    private let apiService: ProductAPIServiceProtocol
+    
+    init(apiService: ProductAPIServiceProtocol = APIService.shared) {
+            self.apiService = apiService
+        }
 
     /// Fetch only on first appearance of Products tab.
     func fetchIfNeeded() {
@@ -26,7 +32,7 @@ final class ProductListViewModel: ObservableObject {
         isLoading = true
         errorMessage = nil
         do {
-            let list = try await APIService.shared.fetchProducts()
+            let list = try await apiService.fetchProducts()
             products = list
             loadedOnce = true
         } catch {

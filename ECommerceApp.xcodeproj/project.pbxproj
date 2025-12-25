@@ -39,6 +39,10 @@
 		BBC3BF8F2E69B1FF002B3C1A /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC3BF8E2E69B1FF002B3C1A /* EditProfileView.swift */; };
 		BBC3BF912E6AEBED002B3C1A /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC3BF902E6AEBED002B3C1A /* UserListView.swift */; };
 		BBC3BF932E6AEC51002B3C1A /* AddEditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC3BF922E6AEC51002B3C1A /* AddEditUserView.swift */; };
+		BBC88E7D2EFC0716000AF9F2 /* ProductApiServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC88E7C2EFC0716000AF9F2 /* ProductApiServiceProtocol.swift */; };
+		BBC88E802EFC07B5000AF9F2 /* MockProductAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC88E7F2EFC07B5000AF9F2 /* MockProductAPIService.swift */; };
+		BBC88E822EFC0837000AF9F2 /* ProductListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC88E812EFC0837000AF9F2 /* ProductListViewModelTests.swift */; };
+		BBC88E842EFC09BE000AF9F2 /* DelayedMockProductAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC88E832EFC09BE000AF9F2 /* DelayedMockProductAPIService.swift */; };
 		BBD57D4F2E5FE0FE00462F70 /* FlipkartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57D4E2E5FE0FE00462F70 /* FlipkartScreen.swift */; };
 		BBD57D512E60733500462F70 /* CartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57D502E60733500462F70 /* CartButton.swift */; };
 /* End PBXBuildFile section */
@@ -97,6 +101,10 @@
 		BBC3BF8E2E69B1FF002B3C1A /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		BBC3BF902E6AEBED002B3C1A /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		BBC3BF922E6AEC51002B3C1A /* AddEditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditUserView.swift; sourceTree = "<group>"; };
+		BBC88E7C2EFC0716000AF9F2 /* ProductApiServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductApiServiceProtocol.swift; sourceTree = "<group>"; };
+		BBC88E7F2EFC07B5000AF9F2 /* MockProductAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProductAPIService.swift; sourceTree = "<group>"; };
+		BBC88E812EFC0837000AF9F2 /* ProductListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModelTests.swift; sourceTree = "<group>"; };
+		BBC88E832EFC09BE000AF9F2 /* DelayedMockProductAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedMockProductAPIService.swift; sourceTree = "<group>"; };
 		BBD57D4E2E5FE0FE00462F70 /* FlipkartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipkartScreen.swift; sourceTree = "<group>"; };
 		BBD57D502E60733500462F70 /* CartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +157,7 @@
 		BB6C3BE12E56AE7200E34D6E /* ECommerceApp */ = {
 			isa = PBXGroup;
 			children = (
+				BBC88E7B2EFC06DC000AF9F2 /* Protocols */,
 				BB6C3C172E56B0EC00E34D6E /* ViewModels */,
 				BB6C3C162E56B0E300E34D6E /* Services */,
 				BB6C3C152E56B0DA00E34D6E /* Models */,
@@ -174,7 +183,9 @@
 		BB6C3BF82E56AE7800E34D6E /* ECommerceAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				BBC88E7E2EFC0786000AF9F2 /* Mocks */,
 				BB6C3BF92E56AE7800E34D6E /* ECommerceAppTests.swift */,
+				BBC88E812EFC0837000AF9F2 /* ProductListViewModelTests.swift */,
 			);
 			path = ECommerceAppTests;
 			sourceTree = "<group>";
@@ -240,6 +251,23 @@
 				BB6C3C342E56D2FD00E34D6E /* ProductDetailViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BBC88E7B2EFC06DC000AF9F2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BBC88E7C2EFC0716000AF9F2 /* ProductApiServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BBC88E7E2EFC0786000AF9F2 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				BBC88E7F2EFC07B5000AF9F2 /* MockProductAPIService.swift */,
+				BBC88E832EFC09BE000AF9F2 /* DelayedMockProductAPIService.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +416,7 @@
 				BB6C3BEF2E56AE7700E34D6E /* ECommerceApp.xcdatamodeld in Sources */,
 				BB6C3C252E56B2F800E34D6E /* ProfileViewModel.swift in Sources */,
 				BB6C3C2D2E56CF8900E34D6E /* ProductListView.swift in Sources */,
+				BBC88E7D2EFC0716000AF9F2 /* ProductApiServiceProtocol.swift in Sources */,
 				BB6C3C312E56D17200E34D6E /* ProfileView.swift in Sources */,
 				BB557D672E5D555900223B23 /* StickyParallaxHeader.swift in Sources */,
 				BB6C3C1B2E56B19E00E34D6E /* ProductM.swift in Sources */,
@@ -408,7 +437,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBC88E802EFC07B5000AF9F2 /* MockProductAPIService.swift in Sources */,
 				BB6C3BFA2E56AE7800E34D6E /* ECommerceAppTests.swift in Sources */,
+				BBC88E822EFC0837000AF9F2 /* ProductListViewModelTests.swift in Sources */,
+				BBC88E842EFC09BE000AF9F2 /* DelayedMockProductAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

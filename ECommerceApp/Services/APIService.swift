@@ -25,7 +25,7 @@ enum APIError: Error, LocalizedError {
     }
 }
 
-final class APIService {
+final class APIService: ProductAPIServiceProtocol {
     static let shared = APIService()
     private init() {}
 
